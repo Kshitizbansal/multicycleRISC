@@ -1,0 +1,68 @@
+module Datapath(reset, clk, memAddr, memWrData, R_pc, ccr_update,
+ memDataOut, aluSrca, aluScrb, RegDst, RegWrite, B_C,
+ MemtoReg, IorD, IrWrite, Aluop, instr, zero, overflow, flagreg,aluout,aluRegOut, irOut);
+
+input reset, clk, R_pc, B_C, ccr_update;
+input wire [15:0] memDataOut;
+output wire [15:0] memAddr, memWrData;
+input aluSrca, RegWrite,  IorD, IrWrite;// PcWriteControl;
+input [1:0] Aluop, aluScrb, RegDst, MemtoReg;
+output [15:0] instr,aluRegOut,aluout; output zero, overflow; output [1:0] flagreg; 
+//______________________-------------------------______________________\\ register mein clk kyo di h ?!!
+output [15:0]irOut;
+wire [15:0] aluRegOut, irOut, mux_after_mdr_Out, regFileOutA, regFileOutB, regAout, regBout, small_mux_before_alu_out, big_mux_before_alu_out;
+wire [2:0] mux_after_ir_out, Pc_sel, mux4B_C_out;
+wire [2:0]regCkBits= irOut[11:9];
+wire [2:0]regAkBits= irOut[8:6];           // dekhlena bhai assign krke likhna h k ni
+wire [2:0]regBkBits= irOut[5:3];
+wire [15:0]ir2signextend_kbaad= (irOut & 16'h003F);
+wire [15:0]jtype_signextend_kbaad= (irOut & 16'h01FF);
+wire [15:0] aluout, mdrOut1;// pcin;
+wire [15:0]instr=irOut;
+wire [1:0]flags;
+assign flags[0]= zero;
+assign flags[1]= overflow;
+assign memWrData= regBout;
+
+
+//regsel pc(clk, PcWriteControl, pcin, pcOut );
+
+mux2_to_1 mux_after_pc(regFileOutA, aluout, IorD, memAddr);//changed
+
+//mem memory(clk, memAddr, memWrData, memDataOut, opcode); <<<<<<<<<<   no need !!!!
+
+regsel ir( clk, IrWrite, memDataOut, irOut);
+
+mux2_to_1_3bit mux4PcSelect(regAkBits, 3'b111, R_pc, Pc_sel);
+
+mux3Bit_4_to_1 mux_after_ir(regBkBits, regCkBits, 3'b111, 3'b000, RegDst, mux_after_ir_out);
+
+register mdr(clk, memDataOut, mdrOut1);
+
+mux2_to_1_3bit mux4B_C(regBkBits, regCkBits, B_C, mux4B_C_out);
+
+mux4_to_1 mux_after_mdr(mdrOut1, aluRegOut,aluout, jtype_signextend_kbaad, MemtoReg , mux_after_mdr_Out); // J type sign extended left
+
+regfile regFile(clk, Pc_sel, regFileOutA, regFileOutB, mux4B_C_out, RegWrite, mux_after_ir_out, mux_after_mdr_Out);
+
+register regA(clk, regFileOutA, regAout);
+
+register regB(clk, regFileOutB, regBout);
+
+mux2_to_1 small_mux_before_alu(regAout, regFileOutA, aluSrca, small_mux_before_alu_out);
+
+mux4_to_1 big_mux_before_alu(regBout, ir2signextend_kbaad, 16'h0000, 16'h0001, aluScrb, big_mux_before_alu_out);     //16'h0000  shift left 2 wala, are jo neeche h!!
+
+alu alu1(small_mux_before_alu_out, big_mux_before_alu_out, Aluop, overflow, zero, aluout);
+
+regsel2bit flagregs(clk, ccr_update, flags, flagreg );
+//register2bit flagregs(clk,  flags, flagreg );
+
+register aluOutReg(clk, aluout, aluRegOut);
+
+//mux2_to_1 mux_after_alu(aluRegOut, aluout, pcin);
+
+endmodule
+
+
+

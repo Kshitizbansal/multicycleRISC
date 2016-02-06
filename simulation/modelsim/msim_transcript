@@ -1,0 +1,128 @@
+# Reading D:/altera/11.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do finale_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying d:\altera\11.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied d:\altera\11.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/clab\ laptop/Desktop/finale {C:/Users/clab laptop/Desktop/finale/Add_cnt.v}
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module Add_cnt
+# 
+# Top level modules:
+# 	Add_cnt
+# vlog -vlog01compat -work work +incdir+C:/Users/clab\ laptop/Desktop/finale {C:/Users/clab laptop/Desktop/finale/risc.v}
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module risc
+# 
+# Top level modules:
+# 	risc
+# vlog -vlog01compat -work work +incdir+C:/Users/clab\ laptop/Desktop/finale {C:/Users/clab laptop/Desktop/finale/register.v}
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module register
+# -- Compiling module register2bit
+# -- Compiling module regsel
+# -- Compiling module regsel2bit
+# 
+# Top level modules:
+# 	register
+# 	register2bit
+# 	regsel
+# 	regsel2bit
+# vlog -vlog01compat -work work +incdir+C:/Users/clab\ laptop/Desktop/finale {C:/Users/clab laptop/Desktop/finale/regFile.v}
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# vlog -vlog01compat -work work +incdir+C:/Users/clab\ laptop/Desktop/finale {C:/Users/clab laptop/Desktop/finale/mux2_to_1.v}
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module mux2_to_1
+# -- Compiling module mux2_to_1_3bit
+# -- Compiling module mux3Bit_4_to_1
+# -- Compiling module mux4_to_1
+# 
+# Top level modules:
+# 	mux2_to_1
+# 	mux2_to_1_3bit
+# 	mux3Bit_4_to_1
+# 	mux4_to_1
+# vlog -vlog01compat -work work +incdir+C:/Users/clab\ laptop/Desktop/finale {C:/Users/clab laptop/Desktop/finale/memory.v}
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module memory
+# 
+# Top level modules:
+# 	memory
+# vlog -vlog01compat -work work +incdir+C:/Users/clab\ laptop/Desktop/finale {C:/Users/clab laptop/Desktop/finale/Datapath.v}
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module Datapath
+# 
+# Top level modules:
+# 	Datapath
+# vlog -vlog01compat -work work +incdir+C:/Users/clab\ laptop/Desktop/finale {C:/Users/clab laptop/Desktop/finale/controller.v}
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+# vlog -vlog01compat -work work +incdir+C:/Users/clab\ laptop/Desktop/finale {C:/Users/clab laptop/Desktop/finale/alu.v}
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# 
+#  
+vsim -voptargs=+acc work.risc
+# vsim -voptargs=+acc work.risc 
+# Loading work.risc
+# Loading work.Datapath
+# Loading work.mux2_to_1
+# Loading work.regsel
+# Loading work.mux3Bit_4_to_1
+# Loading work.mux4_to_1
+# Loading work.regfile
+# Loading work.register
+# Loading work.alu
+# Loading work.regsel2bit
+# Loading work.Add_cnt
+# Loading work.memory
+# Loading work.controller
+add wave sim:/risc/*
+add wave  \
+sim:/risc/mem/mem
+add wave sim:/risc/dp/regB/*
+force -freeze sim:/risc/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/risc/reset 1 0
+run
+force -freeze sim:/risc/reset St0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

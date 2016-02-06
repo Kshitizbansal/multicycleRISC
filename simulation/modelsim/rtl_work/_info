@@ -1,0 +1,293 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\clab laptop\Desktop\finale\simulation\modelsim
+vAdd_cnt
+I9_LS1I;]YmShiYho=QEKG0
+V3QZF`7?oYoZoLTD2?;CoA3
+Z1 dC:\Users\clab laptop\Desktop\finale\simulation\modelsim
+w1445338339
+8C:/Users/clab laptop/Desktop/finale/Add_cnt.v
+FC:/Users/clab laptop/Desktop/finale/Add_cnt.v
+L0 1
+Z2 OV;L;10.0c;49
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@add_cnt
+Z4 !s92 -vlog01compat -work work {+incdir+C:/Users/clab laptop/Desktop/finale} -O0
+!s100 g;ZT8T_n=`6PLJC`Ukgd40
+!s85 0
+!s108 1445361752.248000
+!s107 C:/Users/clab laptop/Desktop/finale/Add_cnt.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/clab laptop/Desktop/finale|C:/Users/clab laptop/Desktop/finale/Add_cnt.v|
+!s101 -O0
+valu
+!s100 9lfFY7S:7Yj7fH2Y9QXYC3
+I_n=K?zMYQU;1kU@X3OzE11
+V[A_9Pb]j^QGcLd0GiKGiP0
+R1
+w1445180767
+8C:/Users/clab laptop/Desktop/finale/alu.v
+FC:/Users/clab laptop/Desktop/finale/alu.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1445361753.039000
+!s107 C:/Users/clab laptop/Desktop/finale/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/clab laptop/Desktop/finale|C:/Users/clab laptop/Desktop/finale/alu.v|
+!s101 -O0
+R3
+R4
+vcontroller
+IXN3f5C:Un^eS1TCJJ]OG>1
+VPOT>ledU5e91FelUPXkW53
+R1
+w1445360394
+8C:/Users/clab laptop/Desktop/finale/controller.v
+FC:/Users/clab laptop/Desktop/finale/controller.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!s100 KmRTUHnC2FbG<VGaJEel<3
+!s85 0
+!s108 1445361752.913000
+!s107 C:/Users/clab laptop/Desktop/finale/controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/clab laptop/Desktop/finale|C:/Users/clab laptop/Desktop/finale/controller.v|
+!s101 -O0
+vDatapath
+I1k[RbJ_NdcjPU^ZEgIXz`3
+VgDz3lPR4`PHVb?LKMbT9R2
+R1
+w1445361578
+8C:/Users/clab laptop/Desktop/finale/Datapath.v
+FC:/Users/clab laptop/Desktop/finale/Datapath.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@datapath
+!s100 [ObYU=Yning6N8_fGG<j`0
+!s85 0
+!s108 1445361752.830000
+!s107 C:/Users/clab laptop/Desktop/finale/Datapath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/clab laptop/Desktop/finale|C:/Users/clab laptop/Desktop/finale/Datapath.v|
+!s101 -O0
+vmemory
+IS2XkG`9j;S8g3[6EekmCE1
+V0?^bOMAmN1?JX6aD4:ZFZ3
+R1
+w1445360034
+8C:/Users/clab laptop/Desktop/finale/memory.v
+FC:/Users/clab laptop/Desktop/finale/memory.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!s100 B0SPkmTfE5NC@XVUnWgoi3
+!s85 0
+!s108 1445361752.755000
+!s107 C:/Users/clab laptop/Desktop/finale/memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/clab laptop/Desktop/finale|C:/Users/clab laptop/Desktop/finale/memory.v|
+!s101 -O0
+vmux2_to_1
+I`AlKk^N=bP0R9eZYdRON@3
+V8V=1V=QczYPPFS3lGMXze1
+R1
+Z5 w1445183871
+Z6 8C:/Users/clab laptop/Desktop/finale/mux2_to_1.v
+Z7 FC:/Users/clab laptop/Desktop/finale/mux2_to_1.v
+L0 1
+R2
+r1
+31
+Z8 !s108 1445361752.618000
+Z9 !s107 C:/Users/clab laptop/Desktop/finale/mux2_to_1.v|
+Z10 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/clab laptop/Desktop/finale|C:/Users/clab laptop/Desktop/finale/mux2_to_1.v|
+R3
+R4
+!s100 c@=MSGmiDHS:MTmdRIND^1
+!s85 0
+!s101 -O0
+vmux2_to_1_3bit
+I^>hFU3jh^ACCa<`c51JDQ0
+V_9h5K:2ZjzTL<:=L;]ZTE2
+R1
+R5
+R6
+R7
+L0 28
+R2
+r1
+31
+R8
+R9
+R10
+R3
+R4
+!s100 h6ZFBihV@5Mm_Wi7d]]nd3
+!s85 0
+!s101 -O0
+vmux3Bit_4_to_1
+IofJRH:[a^KFc=Pl]=D0C70
+VJ@]DIL?K7mzR<zWEfXAF73
+R1
+R5
+R6
+R7
+L0 50
+R2
+r1
+31
+R8
+R9
+R10
+R3
+R4
+nmux3@bit_4_to_1
+!s100 e12j5aEkbTKSaZN<5b>U>2
+!s85 0
+!s101 -O0
+vmux4_to_1
+IUbmC0d:<f9^h?Z_l@fc]J0
+VkNoDC6]KMZAX7G[G>VBF60
+R1
+R5
+R6
+R7
+L0 96
+R2
+r1
+31
+R8
+R9
+R10
+R3
+R4
+!s100 ]J7Y<MP1=FYn8=Wc39Z4o3
+!s85 0
+!s101 -O0
+vregfile
+IjUQii=8e_NmiL5nMcbhAl1
+V0WA^;N9EodJ<@nERzK[;53
+R1
+w1445360031
+8C:/Users/clab laptop/Desktop/finale/regFile.v
+FC:/Users/clab laptop/Desktop/finale/regFile.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!s100 T>cIX@CChB9GiOMXGIY^W1
+!s85 0
+!s108 1445361752.553000
+!s107 C:/Users/clab laptop/Desktop/finale/regFile.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/clab laptop/Desktop/finale|C:/Users/clab laptop/Desktop/finale/regFile.v|
+!s101 -O0
+vregister
+INgZTMU?]R^P4kT9ko@2[T2
+VQ83H_GmPmbXH6PLiSja;Q2
+R1
+Z11 w1445179623
+Z12 8C:/Users/clab laptop/Desktop/finale/register.v
+Z13 FC:/Users/clab laptop/Desktop/finale/register.v
+L0 1
+R2
+r1
+31
+Z14 !s108 1445361752.419000
+Z15 !s107 C:/Users/clab laptop/Desktop/finale/register.v|
+Z16 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/clab laptop/Desktop/finale|C:/Users/clab laptop/Desktop/finale/register.v|
+R3
+R4
+!s100 CUM0LIeFcW]S_9?l^kdOf0
+!s85 0
+!s101 -O0
+vregister2bit
+IPE_H]O]f7EIOJO@Z^gNT_1
+VkmKGd^JO1Z7EV[2YiTi8Q1
+R1
+R11
+R12
+R13
+L0 10
+R2
+r1
+31
+R14
+R15
+R16
+R3
+R4
+!s100 Y9=AcmGN3]Ua4RVWhe_S>0
+!s85 0
+!s101 -O0
+vregsel
+I77:QgiXQE3Tmc]SbzAG]X2
+Va0WP5j[G2hDDMcJ<`2=a21
+R1
+R11
+R12
+R13
+L0 19
+R2
+r1
+31
+R14
+R15
+R16
+R3
+R4
+!s100 @269LYlMJ4J>zeI6z:LCG2
+!s85 0
+!s101 -O0
+vregsel2bit
+Ie32OSWiCbojHXg<2S2P9;2
+VQ_78fD<?]1P_MoW1W[I4>0
+R1
+R11
+R12
+R13
+L0 29
+R2
+r1
+31
+R14
+R15
+R16
+R3
+R4
+!s100 G><k]OS]e;E>RQab9@PHl3
+!s85 0
+!s101 -O0
+vrisc
+Ic_<055F;=J;jg?F]]26H^3
+V:hP@J6ezRZCl>;K^kMilI3
+R1
+w1445361698
+8C:/Users/clab laptop/Desktop/finale/risc.v
+FC:/Users/clab laptop/Desktop/finale/risc.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!s100 IB:BU^9];>PJ[[V:fWO`f1
+!s85 0
+!s108 1445361752.329000
+!s107 C:/Users/clab laptop/Desktop/finale/risc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/clab laptop/Desktop/finale|C:/Users/clab laptop/Desktop/finale/risc.v|
+!s101 -O0

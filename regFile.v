@@ -1,0 +1,50 @@
+module regfile(clk, rdAddrA, rdDataA, rdDataB, rdAddrB, wrenbl, wrAddr, wrData, rg0, rg1, rg2, rg3, rg4, rg5, rg6, rg7);
+
+input clk, wrenbl; 
+input [2:0] rdAddrA, rdAddrB, wrAddr;
+input[15:0] wrData;
+output[15:0] rdDataA, rdDataB; 
+
+output reg [15:0] rg0, rg1, rg2, rg3, rg4, rg5, rg6, rg7;
+initial begin
+rg0=16'h0000;
+rg1=16'h0000;
+rg2=16'h0000;
+rg3=16'h0000;
+rg4=16'h0000;
+rg5=16'h0000;
+rg6=16'h0000;
+rg7=16'h0000;
+end
+
+assign rdDataA = rdAddrA == 3'd0 ? rg0 :
+		    rdAddrA == 3'd1 ? rg1 :
+		    rdAddrA == 3'd2 ? rg2 :
+		    rdAddrA == 3'd3 ? rg3 : 
+			 rdAddrA == 3'd4 ? rg4 :
+		    rdAddrA == 3'd5 ? rg5 :
+		    rdAddrA == 3'd6 ? rg6 : 
+			 rdAddrA == 3'd7 ? rg7 : 15'd0;
+assign rdDataB = rdAddrB == 3'd0 ? rg0 :
+		    rdAddrB == 3'd1 ? rg1 :
+		    rdAddrB == 3'd2 ? rg2 :
+		    rdAddrB == 3'd3 ? rg3 : 
+			 rdAddrB == 3'd4 ? rg4 :
+		    rdAddrB == 3'd5 ? rg5 :
+		    rdAddrB == 3'd6 ? rg6 : 
+			 rdAddrB == 3'd7 ? rg7 : 15'd0;
+			 
+always @ (posedge clk) begin
+		if(wrenbl)
+			case(wrAddr)
+				3'd0: rg0<=wrData;
+				3'd1: rg1<=wrData;
+				3'd2: rg2<=wrData;
+				3'd3: rg3<=wrData;
+				3'd4: rg4<=wrData;
+				3'd5: rg5<=wrData;
+				3'd6: rg6<=wrData;
+				3'd7: rg7<=wrData;
+			endcase
+end			
+endmodule

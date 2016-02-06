@@ -1,0 +1,24 @@
+module risc(reset,clk,st2,o3, alu, irO, memDataOut);
+input clk, reset;
+wire reset, clk,  R_pc, ccr_update,aluSrca,  RegWrite, IorD, IrWrite, zero, overflow, mem_write, mem_read, b_c;
+wire [1:0] aluSrcb, RegDst, Aluop, MemtoReg, flagreg;
+output [15:0]st2,o3,alu, irO, memDataOut;
+wire [15:0] memAddr, memWrData, memDataOut, instr;
+
+wire [15:0]st1,o2,o4, irOutt;
+assign st2=st1;
+assign o3=o2;
+assign alu=o4;
+assign irO=irOutt;
+
+Datapath dp (reset, clk, memAddr, memWrData, R_pc, ccr_update,
+ memDataOut, aluSrca, aluSrcb, RegDst, RegWrite, b_c,
+ MemtoReg, IorD, IrWrite, Aluop, instr, zero, overflow, flagreg,o4,o2,irOutt);
+
+memory mem(clk, memAddr, memWrData, memDataOut, mem_write, mem_read);
+
+controller con(reset, clk, mem_read, mem_write,  R_pc,
+				aluSrca, aluSrcb, RegDst, RegWrite, b_c, MemtoReg,
+				IorD, IrWrite, Aluop, instr, flagreg,st1, ccr_update);
+endmodule
+

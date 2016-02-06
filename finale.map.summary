@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Nov 03 16:46:33 2015
+Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Web Edition
+Revision Name : finale
+Top-level Entity Name : risc
+Family : Cyclone IV E
+Total logic elements : 3,184
+    Total combinational functions : 1,809
+    Dedicated logic registers : 1,925
+Total registers : 1925
+Total pins : 131
+Total virtual pins : 0
+Total memory bits : 4,352
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

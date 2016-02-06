@@ -1,0 +1,52 @@
+module memory(clk, address, wrdata, dataout, mem_write, mem_read);
+input [15:0]address;
+input [15:0]wrdata;
+input clk;
+input  mem_read;
+input  mem_write;
+output reg[15:0] dataout;
+reg [15:0] mem[31:0];	
+
+initial begin
+mem[0] =16'b0000011010000000;
+mem[1] =16'b1001011010000000;
+mem[2] =16'b0000100010000000;
+mem[3] =16'b1100101001000010;//beq
+mem[4] =16'b0000000000000000;//add
+mem[5] =16'b1100101001000011;//beq
+mem[6] =16'b0010000000000100;
+mem[7] =16'b0010000000000100;
+mem[8] =16'b1100101001000010;
+mem[9] =16'b0010000000000100;
+
+end
+
+//assign dataout=(mem_read==1'b1)?mem[address]:16'h0000;
+
+always @(*) begin
+	
+	if(mem_read==1'b1)
+		begin dataout = mem[address]; end
+	else dataout = 16'b0;
+end	
+	
+
+	
+always @(posedge clk) begin
+	
+	if(mem_write==1'b1)
+		begin mem[address] = wrdata; end
+	
+
+end
+endmodule
+
+
+
+
+
+
+
+
+
+
